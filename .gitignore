@@ -1,22 +1,7 @@
-# Python cache
-__pycache__/
-*.pyc
-
-# Virtual environment
-venv/
-env/
-
-# Database
 db.sqlite3
-
-# IDE va editor
+sample_database.db
+*.db
+*.sqlite3
+.venv/
 .idea/
-*.vscode/
-
-# OS fayllari
-.DS_Store
-Thumbs.db
-
-# Log fayllari
-*.log
-*.tmp
+__pycache__/

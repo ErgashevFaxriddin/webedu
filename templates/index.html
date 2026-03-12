@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Xodimlar Boshqaruvi</title>
+    <link href="https://cdn.jsdelivr.net" rel="stylesheet">
+    <style>
+        body { background: #f4f7f6; padding: 50px; }
+        .card { border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; font-weight: bold; }
+    </style>
 </head>
 <body>
-$END$
+
+<div class="container">
+    <div class="text-center mb-5">
+        <h1>Salom, {{ ism }}! 👋</h1>
+        <p class="text-muted">Loyihangizdagi xodimlar ma'lumotlari:</p>
+    </div>
+
+    <div class="card p-4">
+        <h3 class="mb-4">Xodimlar Ro'yxati</h3>
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#ID</th>
+                    <th>Ism Familiya</th>
+                    <th>Email</th>
+                    <th>Telefon</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for emp in employees %}
+                <tr>
+                    <td>{{ emp.employee_id }}</td>
+                    <td>{{ emp.first_name }} {{ emp.last_name }}</td>
+                    <td>{{ emp.email }}</td>
+                    <td>{{ emp.phone_number|default:"Kiritilmagan" }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" class="text-center text-danger">Hozircha bazada xodimlar yo'q.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
 </body>
 </html>

@@ -5,3 +5,5 @@ sample_database.db
 .venv/
 .idea/
 __pycache__/
+db.sqlite3
+sample_database.db
